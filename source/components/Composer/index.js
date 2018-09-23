@@ -9,7 +9,7 @@ export default class Composer extends Component {
           <section className={ Styles.composer }>
             <img src={avatar}/>
             <form>
-              <textarea placeholder={`What's on your mind`} />
+              <textarea placeholder={`What's on your mind ${this.props.currentUserFirstName}`} />
               <input type='submit' value='Post' />
             </form>
           </section>
