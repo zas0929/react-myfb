@@ -1,0 +1,11 @@
+.spinner {
+  background: #00cc00;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  z-index: 100;
+}

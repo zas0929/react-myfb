@@ -7,7 +7,7 @@ import avatar from 'theme/assets/lisa';
 const options = {
   avatar,
   currentUserFirstName: "Lisa",
-  currentUserLastName: "Simpson"
+  currentUserLastName: "Simkpson"
 };
 
 export default class App extends Component {
