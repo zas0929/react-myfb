@@ -10,11 +10,11 @@ import avatar from 'theme/assets/lisa'
 export default class Feed extends Component {
     render () {
         return (
-            <section className={ Styles.feed }>
-              <StatusBar />
+            <section className = { Styles.feed }>
+                <StatusBar />
               <Composer />
               <Post />
-          </section>
+            </section>
         );
     }
 }

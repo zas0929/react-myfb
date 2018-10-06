@@ -150,7 +150,7 @@ rules:
   func-names: [1, "never"]
   func-style: ["error", "declaration", { "allowArrowFunctions": true }]
   id-blacklist: 1
-  indent: [1, 4, {"SwitchCase": 1}]
+  indent: [1, 2, {"SwitchCase": 1}]
   jsx-quotes: [1, "prefer-single"]
   keyword-spacing: 1
   linebreak-style: 0
@@ -290,7 +290,6 @@ rules:
   react/jsx-filename-extension: [1, { "extensions": [".js"] }]
   react/jsx-first-prop-new-line: [1, "multiline"]
   react/jsx-handler-names: 0
-  react/jsx-indent: 1
   react/jsx-indent-props: 1
   react/jsx-key: 1
   react/jsx-max-props-per-line: [0, { "maximum": 3 }]
