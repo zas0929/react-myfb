@@ -137,9 +137,6 @@ rules:
   brace-style: 1
   camelcase: 1
   capitalized-comments: 0
-  comma-dangle: [1, {
-    "objects": "always-multiline"
-  }]
   comma-spacing: 1
   comma-style: 1
   computed-property-spacing: 1
@@ -285,12 +282,9 @@ rules:
   react/style-prop-object: 1
   react/jsx-boolean-value: 1
   react/jsx-closing-bracket-location: [1, {"selfClosing": "line-aligned", nonEmpty: "after-props"}]
-  react/jsx-curly-spacing: [1, "always"]
-  react/jsx-equals-spacing: [1, "always"]
   react/jsx-filename-extension: [1, { "extensions": [".js"] }]
   react/jsx-first-prop-new-line: [1, "multiline"]
   react/jsx-handler-names: 0
-  react/jsx-indent-props: 1
   react/jsx-key: 1
   react/jsx-max-props-per-line: [0, { "maximum": 3 }]
   react/jsx-no-bind: 0
