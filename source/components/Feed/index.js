@@ -6,10 +6,12 @@ import StatusBar from 'components/StatusBar';
 import Composer from 'components/Composer';
 import Post from 'components/Post';
 import Spinner from 'components/Spinner';
+import { withProfile } from 'components/HOC/withProfile';
 
 import Styles from './styles.m.css';
 import { getUniqueID, delay } from "instruments";
 
+@withProfile
 export default class Feed extends Component {
   constructor () {
     super();
@@ -49,6 +51,17 @@ export default class Feed extends Component {
     }));
   }
 
+  _deletePost = (id) => {
+    // console.log("deleted", id);
+    // console.log(this.state.posts);
+
+    // const myPost = this.state.posts.map((obj) => Object.entries(obj).map((arr) => arr[1]) === id ? obj.delete : null )
+
+    // console.log(myPost);
+    // const res = Object.entries(this.state.posts);
+    // console.log(res);
+  }
+
   async _likePost (id) {
     const { currentUserFirstName, currentUserLastName } = this.props;
 
@@ -83,7 +96,7 @@ export default class Feed extends Component {
     const { posts, isSpinning } = this.state;
 
     const postsJSX = posts.map((post) => {
-      return <Post key={ post.id } { ...post } _likePost={ this._likePost} />;
+      return <Post _deletePost={this._deletePost} key={ post.id } { ...post } _likePost={ this._likePost} />;
     });
 
     return (
