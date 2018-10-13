@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 
-import { Consumer } from 'components/HOC/withProfile';
+import { withProfile } from 'components/HOC/withProfile';
 import Styles from './styles.m.css';
 
+@withProfile
 export default class StatusBar extends Component {
   render () {
     return (
-      <Consumer>
-        {(context) => (
-          <section className={ Styles.statusBar }>
-            <button>
-              <img src={context.avatar} />
-            <span>{context.currentUserFirstName}</span>
-              &nbsp;
-              <span>{context.currentUserLastName}</span>
-            </button>
-          </section>
-        )}
-      </Consumer>
-    )
+      <section className={ Styles.statusBar }>
+        <button>
+          <img src={this.props.avatar} />
+          <span>{this.props.currentUserFirstName}</span>
+          &nbsp;
+          <span>{this.props.currentUserLastName}</span>
+        </button>
+      </section>
+    );
   }
 }
