@@ -90,6 +90,7 @@ export default class Like extends Component {
   render () {
     const likeStyles = this._getLikeStyles();
     const likersList = this._getLikersList();
+    const { likes } = this.props;
 
     return (
       <section className={Styles.like}>
@@ -97,7 +98,7 @@ export default class Like extends Component {
         <div>
           {likersList}
           <span onMouseEnter={this._showLikers} onMouseLeave={this._hideLikers}>
-            0
+            {likes.length}
           </span>
         </div>
       </section>
