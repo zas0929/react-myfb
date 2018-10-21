@@ -7,8 +7,9 @@ import Post from 'components/Post';
 import Spinner from 'components/Spinner';
 import Catcher from "components/Catcher";
 import Postman from "components/Postman";
+import Counter from "components/Counter";
 import { withProfile } from 'components/HOC/withProfile';
-import { Transition } from "react-transition-group"
+import { Transition, CSSTransition, TransitionGroup } from "react-transition-group"
 import { fromTo } from "gsap"
 
 import Styles from './styles.m.css';
@@ -157,9 +158,22 @@ export default class Feed extends Component {
 
     const postsJSX = posts.map((post) => {
       return (
-        <Catcher key={post.id}>
-          <Post _deletePost={this._deletePost} key={ post.id } { ...post } _likePost={ this._likePost} />
-        </Catcher>
+        <CSSTransition
+          classNames={{
+            enter : Styles.postInStart,
+            enterActive: Styles.postInEnd,
+            exit: Styles.postOutStart,
+            exitActive: Styles.postOutEnd,
+          }}
+          timeout={ {
+            enter: 500,
+            exit: 400
+          } }
+          key={post.id}>
+          <Catcher>
+            <Post _deletePost={this._deletePost} key={ post.id } { ...post } _likePost={ this._likePost} />
+          </Catcher>
+        </CSSTransition>
       );
     });
 
@@ -175,8 +189,11 @@ export default class Feed extends Component {
         >
           <Composer _createPost={this._createPost} />
         </Transition>
+        <Counter count={this.state.posts.length} />
         <Postman />
-        {postsJSX}
+        <TransitionGroup>
+          {postsJSX}
+        </TransitionGroup>
       </section>
     );
   }
