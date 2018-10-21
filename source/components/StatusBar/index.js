@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import { withProfile } from 'components/HOC/withProfile';
-import { Transition } from "react-transition-group"
-import { fromTo } from "gsap"
+import { Transition } from "react-transition-group";
+import { fromTo } from "gsap";
 import Styles from './styles.m.css';
 import { socket } from "socket/init";
 import cx from "classnames"
