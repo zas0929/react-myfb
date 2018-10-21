@@ -29,7 +29,7 @@ export default class Post extends Component {
 
     return `${firstName} ${lastName}` === `${currentUserFirstName} ${currentUserLastName}`
       ? <span className={ Styles.cross } onClick={this._deletePost} />
-      : null
+      : null;
   }
 
   render () {

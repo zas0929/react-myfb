@@ -64,9 +64,11 @@ export default class Like extends Component {
     const { showLikers } = this.state;
     const { likes } = this.props;
 
-    const likeJSX = likes.map(({ firstName, lastName, id }) => (
-      <li key={id}>{`${firstName} ${lastName}`}</li>
-    ));
+    const likeJSX = likes.map(({ firstName, lastName, id }) => {
+      return (
+        <li key={id}>{`${firstName} ${lastName}`}</li>
+      );
+    });
 
     return likes.length && showLikers ? <ul>{likeJSX}</ul> : null;
   }
