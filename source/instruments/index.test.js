@@ -43,7 +43,6 @@ describe("instruments:", () => {
   });
 
   test("getFullApiUrl should return string of arguments", () => {
-    console.log(getFullApiUrl("hi", "there"));
     expect(getFullApiUrl("hi", "there")).toBe("hi/there");
   });
 });

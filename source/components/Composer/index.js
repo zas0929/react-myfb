@@ -2,13 +2,15 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
-import { withProfile } from 'components/HOC/withProfile';
+import { withProfile } from '../HOC/withProfile';
 
 import Styles from './styles.m.css';
 
-class Composer extends Component {
+export class Composer extends Component {
   static propTypes = {
-    _createPost: PropTypes.func.isRequired,
+    _createPost:          PropTypes.func.isRequired,
+    avatar:               PropTypes.string.isRequired,
+    currentUserFirstName: PropTypes.string.isRequired,
   }
 
   state = {
@@ -63,7 +65,7 @@ class Composer extends Component {
             onChange={this._updateComment}
             onKeyPress={this._submitOnEnter}
           />
-          <input type='submit' value='Post' />
+          <input className='SubmitBtn' type='submit' value='Post' />
         </form>
       </section>
     );
